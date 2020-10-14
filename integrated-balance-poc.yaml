@@ -1,1 +1,452 @@
-
+openapi: 3.0.1
+info:
+  title: Integrated Balance Replenishment
+  description: Integrated Balance Replenishment for Self Service
+  version: '1.0'
+servers:
+  - url: https://digitalapi.jio.com/integratedbalance
+paths:
+  /replenishBalance:
+    post:
+      tags:
+        - BalanceReplenishment
+      summary: Integrated Replenish Balance
+      description: Integrated Replenish Balance
+      operationId: replenishBalance
+      parameters:
+        - name: channel-id
+          in: header
+          description: Channel from which the request is originated
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BalanceReplenishment'
+            example:
+              integratedRechargeRefNo: IR000000AA
+              transDateTime: '2020-08-19T15:42:32.0000000+00:00'
+              paymentDetails:
+                modeOfPayment: '06'
+                totalAmountPayable: '2500'
+                paymentGatewayTransId: '307004159212'
+              replenishmentOrder:
+                - customerServiceType: MOBILITY
+                  lineItem:
+                    - jioroute: BMS01
+                      planOffering:
+                        - transRefNo: '-43001213'
+                          id: '1005797'
+                          customerId: '1000036767'
+                          account:
+                            - accountId: '10000023223232'
+                              subscriptionType: '1'
+                              accountType: '1'
+                              companyCode: '6000'
+                              circleId: MU
+                          product:
+                            - identifier:
+                                value: '7021140425'
+                              service:
+                                - serviceType: Z0003
+                                  identifier:
+                                    value: '917021140425'
+                                - serviceType: Z0002
+                                  identifier:
+                                    value: '405874888893474'
+                            - identifier:
+                                value: '916187418687'
+                              service:
+                                - serviceType: Z0006
+                                  identifier:
+                                    value: '916187418687'
+                      characteristic:
+                        - name: PRODUCT_STATE
+                          value: MU
+                        - name: MERCHANT_STATE
+                          value: MU
+                        - name: CUSTOMER_DETAILS
+                          value: Integrated Recharge
+                        - name: CALLBACK_REF_NOTIFY_URL
+                          value: jms:/myjio.queue
+                    - jioroute: BM001
+                      planOffering:
+                        - transRefNo: '-43001214'
+                          id: '1005797'
+                          customerId: '1000036768'
+                          account:
+                            - accountId: '20000023223232'
+                              subscriptionType: '1'
+                              accountType: '1'
+                              companyCode: '6000'
+                              circleId: MU
+                          product:
+                            - identifier:
+                                value: '7021140426'
+                              service:
+                                - serviceType: Z0003
+                                  identifier:
+                                    value: '917021140426'
+                                - serviceType: Z0002
+                                  identifier:
+                                    value: '405874888893475'
+                            - identifier:
+                                value: '916187418688'
+                              service:
+                                - serviceType: Z0006
+                                  identifier:
+                                    value: '916187418688'
+                      characteristic:
+                        - name: PRODUCT_STATE
+                          value: MU
+                        - name: MERCHANT_STATE
+                          value: MU
+                        - name: CUSTOMER_DETAILS
+                          value: Integrated Recharge
+                        - name: CALLBACK_REF_NOTIFY_URL
+                          value: jms:/myjio.queue
+                - customerServiceType: GIGA_FIBER
+                  lineItem:
+                    - jioroute: BMS01
+                      planOfferingId: Parent001
+                      planOffering:
+                        - transRefNo: '10'
+                          id: Child1001
+                          type: '7'
+                          category: '3'
+                          amount: '500'
+                          customerId: '1000036767'
+                          account:
+                            - accountId: '10000023223232'
+                              subscriptionType: '1'
+                              accountType: '1'
+                              companyCode: '6000'
+                              circleId: MU
+                          product:
+                            - identifier:
+                                value: '128073182832'
+                              service:
+                                - serviceType: Z0005
+                                  identifier:
+                                    value: '918073182832'
+                            - identifier:
+                                value: '2224224224'
+                              service:
+                                - serviceType: Z0029
+                                  identifier:
+                                    value: '912224224224'
+                        - transRefNo: '20'
+                          id: Child2001
+                          type: '31'
+                          category: '11'
+                          amount: '120'
+                          customerId: '1000036767'
+                          product:
+                            - identifier:
+                                value: '128073182832'
+                              service:
+                                - serviceType: Z0005
+                                  identifier:
+                                    value: '918073182832'
+                        - transRefNo: '30'
+                          id: Child3001
+                          type: '32'
+                          category: '13'
+                          amount: '50'
+                          customerId: '1000036767'
+                          product:
+                            - identifier:
+                                value: '128073182832'
+                              service:
+                                - serviceType: Z0005
+                                  identifier:
+                                    value: '918073182832'
+                      characteristic:
+                        - name: PRODUCT_STATE
+                          value: MU
+                        - name: MERCHANT_STATE
+                          value: MU
+                        - name: CUSTOMER_DETAILS
+                          value: Integrated Recharge
+                        - name: CALLBACK_REF_NOTIFY_URL
+                          value: jms:/myjio.queue
+                    - jioroute: BM001
+                      planOfferingId: Parent001
+                      planOffering:
+                        - transRefNo: '40'
+                          id: Child1001
+                          type: '7'
+                          category: '3'
+                          amount: '500'
+                          customerId: '1000036767'
+                          account:
+                            - accountId: '10000023223232'
+                              subscriptionType: '1'
+                              accountType: '1'
+                              companyCode: '6000'
+                              circleId: MU
+                          product:
+                            - identifier:
+                                value: '128073182832'
+                              service:
+                                - serviceType: Z0005
+                                  identifier:
+                                    value: '918073182832'
+                            - identifier:
+                                value: '2224224224'
+                              service:
+                                - serviceType: Z0029
+                                  identifier:
+                                    value: '912224224224'
+                        - transRefNo: '50'
+                          id: Child2001
+                          type: '31'
+                          category: '11'
+                          amount: '120'
+                          customerId: '1000036767'
+                          product:
+                            - identifier:
+                                value: '128073182832'
+                              service:
+                                - serviceType: Z0005
+                                  identifier:
+                                    value: '918073182832'
+                        - transRefNo: '60'
+                          id: Child3001
+                          type: '32'
+                          category: '13'
+                          amount: '50'
+                          customerId: '1000036767'
+                          product:
+                            - identifier:
+                                value: '128073182832'
+                              service:
+                                - serviceType: Z0005
+                                  identifier:
+                                    value: '918073182832'
+                      characteristic:
+                        - name: PRODUCT_STATE
+                          value: MU
+                        - name: MERCHANT_STATE
+                          value: MU
+                        - name: CUSTOMER_DETAILS
+                          value: Integrated Recharge
+                        - name: CALLBACK_REF_NOTIFY_URL
+                          value: jms:/myjio.queue
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BalanceReplenishmentResponse'
+        '400':
+          description: Unexpected Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultStatus'
+        '500':
+          description: Unexpected Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultStatus'
+components:
+  schemas:
+    BalanceReplenishment:
+      type: object
+      properties:
+        integratedRechargeRefNo:
+          type: string
+          description: Integrated Recharge Reference No.
+        transDateTime:
+          type: string
+          description: Transaction Date Time
+        merchantCode:
+          type: string
+          description: Merchant Code
+        agentCode:
+          type: string
+          description: Agent who captured the balance replenishment request
+        paymentDetails:
+          $ref: '#/components/schemas/PaymentDetails'
+        replenishmentOrder:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReplenishmentOrder'
+      description: Request Message for Integrated Balance Replenishment
+    ReplenishmentOrder:
+      type: object
+      properties:
+        customerServiceType:
+          enum:
+            - MOBILITY
+            - GIGA_FIBER
+          type: string
+          description: Customer Service Type
+        lineItem:
+          type: array
+          items:
+            $ref: '#/components/schemas/LineItem'
+      description: Balance Replenishment Order
+    PaymentDetails:
+      type: object
+      properties:
+        modeOfPayment:
+          type: string
+          description: Mode of Payment
+        totalAmountPayable:
+          type: string
+          description: Total Amount Payable
+        paymentGatewayTransId:
+          type: string
+          description: Payment Gateway Transaction id
+        cpTransId:
+          type: string
+          description: Payment Gateway Alias
+    BalanceReplenishmentResponse:
+      type: object
+      properties:
+        integratedRechargeRefNo:
+          type: string
+          description: Integrated Recharge Reference No.
+        resultStatus:
+          $ref: '#/components/schemas/ResultStatus'
+      description: Response Message of Integrated Balance Replenishment
+    LineItem:
+      type: object
+      properties:
+        jioroute:
+          type: string
+          description: Jio Route to route the transaction to OCS
+        planOfferingId:
+          type: string
+          description: 'Wrapper Plan Offering Id, Applicable for Triple Play Plan Offering'
+        modeOfPayment:
+          type: string
+          description: 'Specify for Add-on Plan offering (DBR) when purchased from recurring - Pay Now, possible value - 19  OWNACCOUNT'
+        planOffering:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlanOffering'
+        characteristic:
+          type: array
+          items:
+            $ref: '#/components/schemas/Characteristic'
+    PlanOffering:
+      type: object
+      properties:
+        transRefNo:
+          type: string
+          description: Transaction Reference Number
+        id:
+          type: string
+          description: Plan Offering Id as selected for replenishment
+        type:
+          type: string
+          description: Plan Offering type
+        category:
+          type: string
+          description: Plan Offering Category
+        amount:
+          type: string
+          description: Amount for Flexi Top-up
+        customerId:
+          type: string
+          description: Customer Id
+        account:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+        product:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+    Account:
+      type: object
+      properties:
+        accountId:
+          type: string
+          description: Account Id
+        subscriptionType:
+          type: string
+          description: Type of Subscription
+        accountType:
+          type: string
+          description: Type of Account  1. Connectivity
+        companyCode:
+          type: string
+          description: Company Code
+        circleId:
+          type: string
+          description: Circle Id
+      description: Account
+    Product:
+      type: object
+      properties:
+        identifier:
+          $ref: '#/components/schemas/Identifier'
+        service:
+          type: array
+          items:
+            $ref: '#/components/schemas/Service'
+      description: Product
+    Service:
+      type: object
+      properties:
+        serviceType:
+          type: string
+          description: Type of Service
+        identifier:
+          $ref: '#/components/schemas/Identifier'
+    Identifier:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of Identifier
+        value:
+          type: string
+          description: Identifier value
+      description: Identifier
+    Characteristic:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of characteristic
+        value:
+          type: string
+          description: Value of characteristic
+    ResultStatus:
+      required:
+        - status
+      type: object
+      properties:
+        status:
+          type: string
+          description: Status of Service SUCCESS/FAILED
+        exceptionType:
+          type: string
+          description: Exception type
+        errorCode:
+          type: string
+          description: Error Code
+        errorMessage:
+          type: string
+          description: Error Description
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]
