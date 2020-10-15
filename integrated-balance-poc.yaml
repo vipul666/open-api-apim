@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Integrated Balance Replenishment
+  title: azurepipe1
   description: Integrated Balance Replenishment for Self Service
   version: '1.0'
 servers:
