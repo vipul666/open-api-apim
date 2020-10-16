@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
-  title: azurepipe567
-  description: Integrated Balance Replenishment for Self Service DEMO
+  title: azurepipe666
+  description: Integrated Balance Replenishment for Self Service DEMO-666
   version: '1.0'
 servers:
   - url: https://digitalapi.jio.com/integratedbalance
